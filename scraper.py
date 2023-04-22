@@ -1,12 +1,10 @@
 from requests import get, codes
 from bs4 import BeautifulSoup
 
-# product_code = input("Please enter product code: ")
+# Remove the get_element function as it's not being used
+
 product_code = "36991221"
-# product_code = "150607722"
-# url = "https://www.ceneo.pl/" + product_code + "#tab=reviews"
-# url = "https://www.ceneo.pl/{}#tab=reviews".format(product_code)
-url = f"https://www.ceneo.pl/{product_code}#tab=reviews"
+url  = f"https://www.ceneo.pl/{product_code}#tab=reviews"
 response = get(url)
 if response.status_code == codes['ok']:
     page_dom = BeautifulSoup(response.text, "html.parser")
